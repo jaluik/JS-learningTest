@@ -86,3 +86,16 @@
 // console.log( reg.test(string2) ); // true
 // console.log( reg.test(string3) ); // true
 // console.log( reg.test(string4) ); // false
+
+// let reg = /0?\d{2}/g
+// console.log('023210  000000000000123'.match(reg))
+
+// 4.reg.exec
+// let reg = /\d+/g
+// console.log(reg.exec("123abc34def") );
+// console.log(reg.exec("123abc3def") );
+
+// 5.非捕获分组,添加?:后$1匹配自动会跳到下一位
+// let reg = /(?:[0-9])-([a-z])/g
+// console.log(reg.test('31-aece'))
+// console.log(RegExp.$1)
