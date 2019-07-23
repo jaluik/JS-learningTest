@@ -1,3 +1,4 @@
+// ES6部分功能的测试实现
 // function timeout(ms) {
 //     return new Promise( (res, rej) => {
 //         setTimeout(res, ms, 'done')
@@ -116,3 +117,6 @@
 //     yield 3
 // }
 // console.log([...b]);
+
+// const c = () => (false && 3)
+// console.log(c())

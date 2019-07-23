@@ -1,3 +1,4 @@
+// 用于测试JS数组中的push，unshift的执行效率
 // function unshiftFn(){
 //     const a = []
 
@@ -21,14 +22,14 @@
 // unshiftFn()
 // pushFn()
 
-function unshiftContinuty(){
-    const a = new Array(10000)
+// function unshiftContinuty(){
+//     const a = new Array(10000)
 
-    a.push('这是string')
+//     a.push('这是string')
 
-    console.time('continuty')
-    for(let i = 0; i< 10000; i++){
-        a.unshift(i)
-    }
-    console.timeEnd('conti')
-}
+//     console.time('continuty')
+//     for(let i = 0; i< 10000; i++){
+//         a.unshift(i)
+//     }
+//     console.timeEnd('conti')
+// }
