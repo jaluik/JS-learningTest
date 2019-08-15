@@ -1,3 +1,6 @@
+// 用于研究学习iterator属性和generator函数
+
+
 // 简单的generator函数
 // function *foo(){
 //     yield 'hello'
@@ -113,4 +116,56 @@
 // let obj2 = new Obj(15,38)
 // for(let i of obj2){
 //     console.log(i)
+// }
+
+
+// 字符串的iterator接口
+// let string = 'hello1wq'
+// let it = string[Symbol.iterator]()
+// console.log(it.next().value);
+// console.log(it.next().value);
+// console.log(it.next().value);
+// console.log(it.next().value);
+// console.log(it.next().value);
+
+// 重写字符串的iterator接口
+// let str = new String('hello')
+// str[Symbol.iterator] = function(){
+//     return {
+//         _first: true,
+//         next: function(){
+//             if(this._first){
+//                 this._first = false
+//                 return { value : 'bye'}
+//             }else{
+//                 return { done: true}
+//             }
+//         }
+//     }
+// }
+// console.log([...str])
+
+// iterator与generator函数的实现
+// let generateIterator = {
+//     [Symbol.iterator]: function *(){
+//         yield 1;
+//         yield 2;
+//         yield 3;
+//     }
+// }
+// let generateIterator={
+//     *[Symbol.iterator](){
+//         yield 'a'
+//         yield 'b'
+//     }
+// }
+// console.log([...generateIterator])
+
+
+// 数组默认绑定了iterator函数
+// let arr = ['hello', 'hi']
+// let obj = {}
+// obj[Symbol.iterator] = arr[Symbol.iterator].bind(arr)
+// for (let i of obj){
+//     console.log(i);
 // }
