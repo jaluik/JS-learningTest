@@ -119,4 +119,11 @@ let a = new MyPromise((res, rej) => {
     },2000)
 }).then((val)=> {
     console.log(val)
+    return new MyPromise( (res, rej) => {
+        setTimeout( () => {
+            res('feaefa')
+        }, 1000)
+    })
+}).then((val)=> {
+    console.log(val);
 })
