@@ -169,3 +169,64 @@
 // for (let i of obj){
 //     console.log(i);
 // }
+
+// const obj = {
+//     [Symbol.iterator]: function(){
+//         return {
+//             next(){
+//                 return {
+//                     value: 1,
+//                     done: false
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// for(key of obj){
+//     console.log(key);
+// }
+
+// let arr = [1, 3, 5, 6]
+// let it = arr[Symbol.iterator]()
+
+// console.log(it.next())
+// console.log(it.next())
+// console.log(it.next())
+// console.log(it.next())
+// console.log(it.next())
+// console.log(it.next())
+// console.log(it.next())
+
+// var arr = [1, 3, [1, 4, 5],[1,[2,5],10]]
+
+// const flat = function* (a){
+//     for(let i=0; i< a.length; i++){
+//         if(typeof(a[i]) !== 'number'){
+//             yield* flat(a[i])
+//         }else{
+//             yield a[i]
+//         }
+//     }
+// }
+
+// for(let i of flat(arr)){
+//     console.log(i);
+// }
+
+// var myIterable = {}
+// myIterable[Symbol.iterator] = function* (){
+//     yield 1
+//     yield 2
+//     yield 3
+// }
+// for(let i of myIterable){
+//     console.log(i);
+// }
+
+function* gen(){
+    yield 1
+}
+
+var g = gen()
+console.log(g[Symbol.iterator]() === g)
